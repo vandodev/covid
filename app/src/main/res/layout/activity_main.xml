@@ -140,7 +140,7 @@
             android:layout_height="match_parent">
 
             <com.leo.simplearcloader.SimpleArcLoader
-                android:visibility="gone"
+                android:visibility="visible"
                 android:id="@+id/loader"
                 android:layout_centerInParent="true"
                 android:layout_width="60dp"
@@ -153,6 +153,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/scrollStats"
+                android:visibility="gone"
                 >
 
                 <LinearLayout
@@ -396,6 +397,34 @@
                             />
 
                     </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Affected Countries"
+                            android:textSize="18sp"/>
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:id="@+id/tvAffectedCountries"
+                            android:textAlignment="textEnd"
+                            android:textSize="18sp"
+                            android:textColor="@color/color_one"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-light"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -407,6 +436,7 @@
 
                     
                 </LinearLayout>
+
 
             </ScrollView>
 
