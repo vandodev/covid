@@ -2,6 +2,7 @@ package com.example.covid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -105,5 +106,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goTrackCountries(View view) {
+        startActivity(new Intent(getApplicationContext(),AffectedCountries.class));
     }
 }
