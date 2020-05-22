@@ -1,8 +1,12 @@
 package com.example.covid;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -41,8 +45,36 @@ public class AffectedCountries extends AppCompatActivity {
         edtSearch = findViewById(R.id.edtSearch);
         listView = findViewById(R.id.ListView);
         simpleArcLoader = findViewById(R.id.loader);
+
+        getSupportActionBar().setTitle("Affected Countries");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         
         fetchData();
+
+        edtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                myCustomAdapter.getFilter().filter(s);
+                myCustomAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        finish();
+        return super.onOptionsItemSelected(item);
     }
 
     private void  fetchData(){
